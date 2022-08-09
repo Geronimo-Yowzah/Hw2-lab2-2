@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="p.php">
+    <fieldset>
+        <h1>แบบฟอร์มจองทัวร์</h1>
+        <fieldset>
+            <legend>ข้อมูลทั่วไป</legend>
+            ชื่อ-สกุล:<br>
+            <input 
+                type="text"
+                name="ชื่อ-นามสกุล"
+                placeholder="กรอกชื่อ-นามสกุล"
+                pattern="[^0-9]+" required>*
+            <br>
+            Email:<br>
+            <input 
+                type="email" required>*
+            <br>
+            โทรศัพท์:<br>
+            <input type="tel"
+            name="phone"
+            value="+66"
+            pattern="\+66[0-9]{9}">*
+            <br>
+            ที่อยู่:<br>
+            <textarea name="ปณ" cols="40" rows="4"></textarea>
+            <br>
+            รหัสไปรษณีษ์:
+            <input 
+                type="text"
+                maxlength="5"
+                size="5"
+                pattern="[0-9]{5}">
+            <br>
+            รูปผู้จอง:
+            <input type="file" value="Choose Flie">
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>ข้อมูลเข้าสู่ระบบ</legend>
+            Username:<br>
+            <input type="text" pattern="\w{8,}" required>
+                <br>
+                <i>ประกอบด้วยตัวเลข ตัวอักษร หรือ _ตั้งแต่ 8 ตัวขึ้นไป</i><br><br>
+            Password:<br>
+            <input type="password" pattern=".{8,}" required><br>
+            <i>ประกอบด้วยตัวอักขระอะไรก็ได้ 8 ตัวขึ้นไป</i>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>ข้อมูลทัวร์ที่ต้องการ</legend>
+            <label>แพคเก็จทัวร์:
+                <select name="แพคเก็จทัวร์">
+                    <option value="">--select--</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Norway">Norway</option>
+                    <option value="Nepal">Nepal</option>
+                    <option value="Egypt">Egypt</option>
+                    <option value="England">England</option>
+                </select>
+            </label>
+            <br>
+            <label>วันที่เดินทาง:
+                <input type="date" name="date">
+            </label><br>
+            จำนวนผู้เดินทาง:
+            <input type="number" min="1" max="10" size="5"><br>
+            <label>เน้นการท่องเที่ยวแบบใด?<br>
+                <input type="checkbox" name="style" value="ชอปปิ้ง">ชอปปิ้ง<br>
+                <input type="checkbox" name="style1" value="ธรรมชาติ">ธรรมชาติ<br>
+                <input type="checkbox" name="style2" value="ทะเล">ทะเล<br>
+            </label>
+
+        </fieldset>
+        <br>
+        <label>
+            ยอมรับเงื่อนไขและข้อตกลง
+            <input type="radio" name="agree" value="I agree" checked="checked">I agree
+            <input type="radio" name="agree" value="I disagree">I disagree
+        </label>
+        <input type="submit" value="จอง">
+    </fieldset>
+    
+    </form>
+</body>
+</html>
